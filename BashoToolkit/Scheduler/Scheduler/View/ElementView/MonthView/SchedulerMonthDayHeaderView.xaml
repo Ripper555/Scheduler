@@ -1,0 +1,41 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:scheduler="clr-namespace:Basho.Toolkit.Scheduler"
+	mc:Ignorable="d"
+	x:Class="Basho.Toolkit.Scheduler.SchedulerMonthDayHeaderView"
+	x:Name="UserControl"
+    x:ClassModifier="internal"
+	d:DesignWidth="192" d:DesignHeight="32">
+
+	<UserControl.Resources>
+    	<ResourceDictionary>
+        	<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/SchedulerResources.xaml"/>
+        	</ResourceDictionary.MergedDictionaries>
+    	</ResourceDictionary>
+	</UserControl.Resources>
+	
+	<Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <scheduler:SchedulerDayConverter x:Key="DayConv" />
+			<scheduler:SchedulerMonthConverter x:Key="MonthConv" />
+        </Grid.Resources>
+		<Button d:LayoutOverrides="Height" Command="{Binding Path=ClickHeaderCommand}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="1" Style="{DynamicResource DayHeaderButton}" RenderTransformOrigin="0.5,0.5">
+			<Grid Margin="4,0">
+				<TextBlock VerticalAlignment="Center" d:LayoutOverrides="Width">
+					<TextBlock.Text>
+						<MultiBinding Converter="{StaticResource MonthConv}" FallbackValue="month" >
+							<Binding Path="Date" />
+							<Binding Path="IsActive" />
+							<Binding Path="Month" />
+						</MultiBinding>
+					</TextBlock.Text>
+				</TextBlock>
+				<TextBlock HorizontalAlignment="Right" Margin="0,0,2,0" Text="{Binding Date, Converter={StaticResource DayConv}, Mode=OneWay, FallbackValue=date}" VerticalAlignment="Center"/>
+			</Grid>
+		</Button>
+	</Grid>
+</UserControl>

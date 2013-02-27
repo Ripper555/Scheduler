@@ -1,0 +1,155 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:scheduler="clr-namespace:Basho.Toolkit.Scheduler"
+	mc:Ignorable="d"
+	x:Class="Basho.Toolkit.Scheduler.SchedulerDayBodyView"
+	x:Name="UserControl"
+    x:ClassModifier="internal"
+	d:DesignWidth="216" d:DesignHeight="1152">
+
+	<UserControl.Resources>
+    	<ResourceDictionary>
+        	<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/SchedulerResources.xaml"/>
+        	</ResourceDictionary.MergedDictionaries>
+    	</ResourceDictionary>
+	</UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <scheduler:SchedulerHourFromRowConverter x:Key="fromRowConv" />
+            <scheduler:SchedulerHourFromRowSpanConverter x:Key="fromRowSpanConv" />
+            <scheduler:SchedulerHourToRowConverter x:Key="toRowConv" />
+            <scheduler:SchedulerHourToRowSpanConverter x:Key="toRowSpanConv" />
+        </Grid.Resources>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+			<RowDefinition Height="24"/>
+		</Grid.RowDefinitions>
+		<Border Grid.RowSpan="48" Margin="1,0" Style="{DynamicResource DayBodyBackgroundStyle}"/>
+		<Border Grid.Row="0" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="1" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="2" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="3" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="4" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="5" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="6" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="7" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="8" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="9" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="10" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="11" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="12" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="13" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="14" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="15" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="16" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="17" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="18" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="19" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="20" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="21" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="22" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="23" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="24" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="25" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="26" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="27" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="28" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="29" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="30" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="31" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="32" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="33" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="34" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="35" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="36" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="37" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="38" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="39" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="40" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="41" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="42" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="43" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="44" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="45" BorderBrush="{DynamicResource HourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+		<Border Grid.Row="46" BorderBrush="{DynamicResource HalfHourLine}" BorderThickness="0,0,0,1" Margin="1,0"/>
+        <Border Background="{DynamicResource InactiveHourShadeBackground}" Margin="1,0">
+            <Grid.Row>
+                <MultiBinding Converter="{StaticResource fromRowConv}" FallbackValue="0" >
+                    <Binding Path="Date" />
+                    <Binding Path="DisplayInfo" />
+                </MultiBinding>
+            </Grid.Row>
+            <Grid.RowSpan>
+                <MultiBinding Converter="{StaticResource fromRowSpanConv}" FallbackValue="6" >
+                    <Binding Path="Date" />
+                    <Binding Path="DisplayInfo" />
+                </MultiBinding>
+            </Grid.RowSpan>
+        </Border>
+        <Border Background="{DynamicResource InactiveHourShadeBackground}" Margin="1,0">
+            <Grid.Row>
+                <MultiBinding Converter="{StaticResource toRowConv}" FallbackValue="42" >
+                    <Binding Path="Date" />
+                    <Binding Path="DisplayInfo" />
+                </MultiBinding>
+            </Grid.Row>
+            <Grid.RowSpan>
+                <MultiBinding Converter="{StaticResource toRowSpanConv}" FallbackValue="6" >
+                    <Binding Path="Date" />
+                    <Binding Path="DisplayInfo" />
+                </MultiBinding>
+            </Grid.RowSpan>
+        </Border>
+	</Grid>
+</UserControl>

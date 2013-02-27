@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:Basho.Toolkit.Scheduler"
+                    xmlns:vw="clr-namespace:Basho.Toolkit.Scheduler">
+
+    <!-- ViewModels => View datatemplates -->
+    <DataTemplate DataType="{x:Type vm:SchedulerDayHeaderViewModel}">
+        <vw:SchedulerDayHeaderView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SchedulerAllDayBodyViewModel}">
+        <vw:SchedulerAllDayBodyView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SchedulerDayBodyViewModel}">
+        <vw:SchedulerDayBodyView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SchedulerDayBodyBorderViewModel}">
+        <vw:SchedulerDayBodyBorderView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SchedulerDayHourHeaderViewModel}">
+        <vw:SchedulerDayHourHeaderView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SchedulerDayHourHeaderBorderViewModel}">
+        <vw:SchedulerDayHourHeaderBorderView />
+    </DataTemplate>
+
+</ResourceDictionary>

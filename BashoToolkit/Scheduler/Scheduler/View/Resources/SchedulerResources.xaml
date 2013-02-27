@@ -1,0 +1,253 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:scheduler="clr-namespace:Basho.Toolkit.Scheduler"
+    xmlns:win="clr-namespace:System.Windows;assembly=PresentationFramework"
+    mc:Ignorable="d">
+    
+    <!-- constants-->
+    <win:GridLength x:Key="HeaderSize">20</win:GridLength>
+    <win:GridLength x:Key="HourHeaderSize">48</win:GridLength>
+
+    <!-- header brushes-->
+    <LinearGradientBrush x:Key="NormalDayHeaderBackground" Options:Freeze="True" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#FFDFEFF4"/>
+        <GradientStop Color="#FFC5E2EA" Offset="0.5"/>
+        <GradientStop Color="#FFAAD1DC" Offset="0.5"/>
+        <GradientStop Color="#FF82B6C5" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="NormalDayHeaderBorder" Options:Freeze="True" Color="#FF82B6C5"/>
+
+    <LinearGradientBrush x:Key="TodayHeaderBackground" Options:Freeze="True" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#FFFAE7A9"/>
+        <GradientStop Color="#FFEEDC89" Offset="0.5"/>
+        <GradientStop Color="#FFF0CA7B" Offset="0.5"/>
+        <GradientStop Color="#FFFFC52C" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="TodayHeaderBorder" Options:Freeze="True" Color="#FFFFC52C"/>
+
+    <LinearGradientBrush x:Key="InactiveDayHeaderBackground" Options:Freeze="True" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#FFF4F4F4"/>
+        <GradientStop Color="#FFEAEAEA" Offset="0.5"/>
+        <GradientStop Color="#FFDEDEDE" Offset="0.5"/>
+        <GradientStop Color="#FFCDCDCD" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="InactiveDayHeaderBorder" Options:Freeze="True" Color="#FFCDCDCD"/>
+	
+	<RadialGradientBrush x:Key="HeaderHoverBackground" Options:Freeze="True">
+		<GradientStop Offset="1"/>
+		<GradientStop Color="#CCFFFFFF"/>
+	</RadialGradientBrush>
+	
+    <LinearGradientBrush x:Key="WeekHeaderBackground" Options:Freeze="True" StartPoint="0,0.5" EndPoint="1,0.5">
+        <GradientStop Color="#FFDFEFF4"/>
+        <GradientStop Color="#FFC5E2EA" Offset="0.5"/>
+        <GradientStop Color="#FFAAD1DC" Offset="0.5"/>
+        <GradientStop Color="#FF82B6C5" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="WeekHeaderBorder" Options:Freeze="True" Color="#FF82B6C5"/>
+	
+    <SolidColorBrush x:Key="HourHeaderBackground" Options:Freeze="True" Color="#FFDFEFF4"/>
+    <SolidColorBrush x:Key="HourHeaderBorder" Options:Freeze="True" Color="#FF82B6C5"/>
+    <!-- header brushes-->
+
+    <!-- header style -->
+    <Style x:Key="DayHeaderBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="{StaticResource NormalDayHeaderBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource NormalDayHeaderBorder}"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsActive}" Value="False">
+        		<Setter Property="Background" Value="{StaticResource InactiveDayHeaderBackground}"/>
+        		<Setter Property="BorderBrush" Value="{StaticResource InactiveDayHeaderBorder}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsToday}" Value="True">
+        		<Setter Property="Background" Value="{StaticResource TodayHeaderBackground}"/>
+        		<Setter Property="BorderBrush" Value="{StaticResource TodayHeaderBorder}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+	
+    <Style x:Key="HeaderHoverBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Opacity" Value="0"/>
+        <Setter Property="Background" Value="{StaticResource HeaderHoverBackground}"/>
+    </Style>
+	
+    <Style x:Key="WeekHeaderBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="{StaticResource WeekHeaderBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource WeekHeaderBorder}"/>
+    </Style>
+    <!-- header style -->
+
+    <!-- day body brushes -->
+    <SolidColorBrush x:Key="NormalDayBodyBackground" Options:Freeze="True" Color="White"/>
+    <SolidColorBrush x:Key="BlueDayBodyBackground" Options:Freeze="True" Color="#FFB3EBF7"/>
+    <SolidColorBrush x:Key="GreenDayBodyBackground" Options:Freeze="True" Color="#FFA0ED9F"/>
+    <SolidColorBrush x:Key="OrangeDayBodyBackground" Options:Freeze="True" Color="#FFFFC748"/>
+    <SolidColorBrush x:Key="PurpleDayBodyBackground" Options:Freeze="True" Color="#FFF7B1EB"/>
+    <SolidColorBrush x:Key="RedDayBodyBackground" Options:Freeze="True" Color="#FFFF8282"/>
+    <SolidColorBrush x:Key="YellowDayBodyBackground" Options:Freeze="True" Color="#FFF1EC52"/>
+
+    <SolidColorBrush x:Key="NormalDayBodyBorder" Options:Freeze="True" Color="#FF82B6C5"/>
+    <SolidColorBrush x:Key="TodayBodyBorder" Options:Freeze="True" Color="#FFFFC52C"/>
+	<SolidColorBrush x:Key="InactiveDayBodyBorder" Options:Freeze="True" Color="#FFCDCDCD"/>
+
+    <SolidColorBrush x:Key="InactiveDayShadeBackground" Options:Freeze="True" Color="#33000000"/>
+    <SolidColorBrush x:Key="InactiveHourShadeBackground" Options:Freeze="True" Color="#19000000"/>
+	
+    <SolidColorBrush x:Key="HalfHourLine" Options:Freeze="True" Color="#26000000"/>
+    <SolidColorBrush x:Key="HourLine" Options:Freeze="True" Color="#4C000000"/>
+    <!-- day body brushes -->
+
+    <!-- day body styles -->
+    <Style x:Key="DayBodyBackgroundStyle" TargetType="{x:Type Border}">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="{StaticResource NormalDayBodyBackground}"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Category}">
+                <DataTrigger.Value>
+                    <scheduler:Category>Blue</scheduler:Category>
+                </DataTrigger.Value>
+                <Setter Property="Background" Value="{StaticResource BlueDayBodyBackground}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Category}">
+                <DataTrigger.Value>
+                    <scheduler:Category>Green</scheduler:Category>
+                </DataTrigger.Value>
+                <Setter Property="Background" Value="{StaticResource GreenDayBodyBackground}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Category}">
+                <DataTrigger.Value>
+                    <scheduler:Category>Orange</scheduler:Category>
+                </DataTrigger.Value>
+                <Setter Property="Background" Value="{StaticResource OrangeDayBodyBackground}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Category}">
+                <DataTrigger.Value>
+                    <scheduler:Category>Purple</scheduler:Category>
+                </DataTrigger.Value>
+                <Setter Property="Background" Value="{StaticResource PurpleDayBodyBackground}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Category}">
+                <DataTrigger.Value>
+                    <scheduler:Category>Red</scheduler:Category>
+                </DataTrigger.Value>
+                <Setter Property="Background" Value="{StaticResource RedDayBodyBackground}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Category}">
+                <DataTrigger.Value>
+                    <scheduler:Category>Yellow</scheduler:Category>
+                </DataTrigger.Value>
+                <Setter Property="Background" Value="{StaticResource YellowDayBodyBackground}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+	
+    <Style x:Key="DayBodyBorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource NormalDayBodyBorder}"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsActive}" Value="False">
+        		<Setter Property="BorderBrush" Value="{StaticResource InactiveDayBodyBorder}"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding IsToday}" Value="True">
+        		<Setter Property="BorderBrush" Value="{StaticResource TodayBodyBorder}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="InactiveDayShadeVisibleStyle" TargetType="{x:Type Border}">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="{StaticResource InactiveDayShadeBackground}"/>
+        <Setter Property="Visibility" Value="Collapsed"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsActive}" Value="False">
+                <Setter Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <!-- day body styles -->
+
+    <Style x:Key="DayHeaderButton" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="OnMouseEnter">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverLayer" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="OnMouseLeave">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverLayer" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="BackgroundLayer" Style="{DynamicResource DayHeaderBorderStyle}"/>
+                        <Border x:Name="HoverLayer" Style="{DynamicResource HeaderHoverBorderStyle}"/>
+                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource OnMouseLeave}"/>
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource OnMouseEnter}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="WeekHeaderButton" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="OnMouseEnter">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverLayer" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="OnMouseLeave">
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverLayer" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="BackgroundLayer" Style="{DynamicResource WeekHeaderBorderStyle}"/>
+                        <Border x:Name="HoverLayer" Style="{DynamicResource HeaderHoverBorderStyle}"/>
+                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource OnMouseLeave}"/>
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource OnMouseEnter}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

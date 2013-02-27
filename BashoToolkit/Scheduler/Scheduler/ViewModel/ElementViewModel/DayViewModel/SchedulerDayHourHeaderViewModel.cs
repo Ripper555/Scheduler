@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.ComponentModel;
+
+namespace Basho.Toolkit.Scheduler
+{
+    internal class SchedulerDayHourHeaderViewModel : SchedulerBaseElementViewModel
+    {
+    }
+}

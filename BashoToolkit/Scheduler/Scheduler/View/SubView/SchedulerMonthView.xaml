@@ -1,0 +1,66 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:scheduler="clr-namespace:Basho.Toolkit.Scheduler"
+	mc:Ignorable="d"
+	xmlns:local="clr-namespace:Basho.Toolkit.Scheduler"
+	x:Class="Basho.Toolkit.Scheduler.SchedulerMonthView"
+	x:Name="UserControl"
+    x:ClassModifier="internal"
+	d:DesignWidth="640" d:DesignHeight="480">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/SchedulerResources.xaml" />
+                <ResourceDictionary Source="../Resources/SchedulerMonthResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ItemsControl ItemsSource="{Binding Path=Elements}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <Grid>
+                    <Grid.Resources>
+                        <scheduler:SchedulerMonth6WHeaderConverter x:Key="HeaderConv" />
+                        <scheduler:SchedulerMonth6WBodyConverter x:Key="BodyConv" />
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{StaticResource HeaderSize}"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="{StaticResource HeaderSize}"/>
+                        <RowDefinition Height="{StaticResource HeaderSize}"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="{StaticResource HeaderSize}"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="{StaticResource HeaderSize}"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="{StaticResource HeaderSize}"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="{Binding DisplayedWeeks, Converter={StaticResource HeaderConv}, ConverterParameter=5, Mode=OneWay}"/>
+                        <RowDefinition Height="{Binding DisplayedWeeks, Converter={StaticResource BodyConv}, ConverterParameter=5, Mode=OneWay}"/>
+                        <RowDefinition Height="{Binding DisplayedWeeks, Converter={StaticResource HeaderConv}, ConverterParameter=6, Mode=OneWay}"/>
+                        <RowDefinition Height="{Binding DisplayedWeeks, Converter={StaticResource BodyConv}, ConverterParameter=6, Mode=OneWay}"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemContainerStyle>
+            <Style>
+                <Setter Property="Grid.Column" Value="{Binding Path=Column}" />
+                <Setter Property="Grid.Row" Value="{Binding Path=Row}" />
+            </Style>
+        </ItemsControl.ItemContainerStyle>
+    </ItemsControl>
+</UserControl>

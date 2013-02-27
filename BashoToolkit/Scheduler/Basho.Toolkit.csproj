@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B81E3832-1F36-4093-9A26-F850C74F2BE6}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Basho.Toolkit</RootNamespace>
+    <AssemblyName>Basho.Toolkit</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseCommand.cs" />
+    <Compile Include="Base\BaseModel.cs" />
+    <Compile Include="Base\Interfaces\IBaseModel.cs" />
+    <Compile Include="Scheduler\Business\DisplayedDays.cs" />
+    <Compile Include="Scheduler\Model\Interfaces\ISchedulerBaseModel.cs" />
+    <Compile Include="Scheduler\Model\Interfaces\ISchedulerDayModel.cs" />
+    <Compile Include="Scheduler\Model\Interfaces\ISchedulerDisplayInfo.cs" />
+    <Compile Include="Scheduler\Model\Interfaces\ISchedulerMonthModel.cs" />
+    <Compile Include="Scheduler\Model\Interfaces\ISchedulerWeekModel.cs" />
+    <Compile Include="Scheduler\ViewModel\ElementViewModel\DayViewModel\SchedulerAllDayBodyViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\ElementViewModel\DayViewModel\SchedulerDayHeaderViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\ElementViewModel\DayViewModel\SchedulerDayHourHeaderBorderViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\ElementViewModel\DayViewModel\SchedulerDayBodyBorderViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\ElementViewModel\DayViewModel\SchedulerDayHourHeaderViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\ElementViewModel\DayViewModel\SchedulerDayBodyViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\Interfaces\ISchedulerHolder.cs" />
+    <Compile Include="Scheduler\ViewModel\Interfaces\IWeekSelected.cs" />
+    <Compile Include="Scheduler\ViewModel\Interfaces\IDaySelected.cs" />
+    <Compile Include="Scheduler\ViewModel\SchedulerBaseViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\ElementViewModel\MonthViewModel\SchedulerMonthWeekHeaderViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\ElementViewModel\MonthViewModel\SchedulerMonthDayNameHeaderViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\ElementViewModel\MonthViewModel\SchedulerMonthDayHeaderViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\ElementViewModel\MonthViewModel\SchedulerMonthDayBodyViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\ElementViewModel\SchedulerBaseElementViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\ElementViewModel\SchedulerBaseDayViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\SubViewModel\SchedulerBaseSubViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\SchedulerViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\SubViewModel\SchedulerMonthViewModel.cs" />
+    <Compile Include="Scheduler\ViewModel\SubViewModel\SchedulerWeekViewModel.cs" />
+    <Compile Include="Scheduler\Model\SchedulerDayModel.cs" />
+    <Compile Include="Scheduler\Model\SchedulerDisplayInfo.cs" />
+    <Compile Include="Scheduler\Model\SchedulerBaseModel.cs" />
+    <Compile Include="Scheduler\Model\SchedulerMonthModel.cs" />
+    <Compile Include="Scheduler\Model\SchedulerWeekModel.cs" />
+    <Compile Include="Scheduler\Business\Category.cs" />
+    <Compile Include="Scheduler\Business\DisplayMode.cs" />
+    <Compile Include="Scheduler\Business\Occurrence.cs" />
+    <Compile Include="Scheduler\Business\Importance.cs" />
+    <Compile Include="Scheduler\View\Converters\SchedulerWeekDaysConverter.cs" />
+    <Compile Include="Scheduler\View\Converters\SchedulerDayConverter.cs" />
+    <Compile Include="Scheduler\View\Converters\SchedulerHourFromRowConverter.cs" />
+    <Compile Include="Scheduler\View\Converters\SchedulerHourFromRowSpanConverter.cs" />
+    <Compile Include="Scheduler\View\Converters\SchedulerHourToRowConverter.cs" />
+    <Compile Include="Scheduler\View\Converters\SchedulerHourToRowSpanConverter.cs" />
+    <Compile Include="Scheduler\View\Converters\SchedulerMonth6WBodyConverter.cs" />
+    <Compile Include="Scheduler\View\Converters\SchedulerMonth6WHeaderConverter.cs" />
+    <Compile Include="Scheduler\View\Converters\SchedulerMonthConverter.cs" />
+    <Compile Include="Scheduler\View\ElementView\DayView\SchedulerAllDayBodyView.xaml.cs">
+      <DependentUpon>SchedulerAllDayBodyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduler\View\ElementView\DayView\SchedulerDayHourHeaderBorderView.xaml.cs">
+      <DependentUpon>SchedulerDayHourHeaderBorderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduler\View\ElementView\DayView\SchedulerDayBodyBorderView.xaml.cs">
+      <DependentUpon>SchedulerDayBodyBorderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduler\View\ElementView\MonthView\SchedulerMonthDayBodyView.xaml.cs">
+      <DependentUpon>SchedulerMonthDayBodyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduler\View\ElementView\MonthView\SchedulerMonthDayHeaderView.xaml.cs">
+      <DependentUpon>SchedulerMonthDayHeaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduler\View\ElementView\DayView\SchedulerDayBodyView.xaml.cs">
+      <DependentUpon>SchedulerDayBodyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduler\View\ElementView\DayView\SchedulerDayHeaderView.xaml.cs">
+      <DependentUpon>SchedulerDayHeaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduler\View\ElementView\MonthView\SchedulerMonthDayNameHeaderView.xaml.cs">
+      <DependentUpon>SchedulerMonthDayNameHeaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduler\View\ElementView\MonthView\SchedulerMonthWeekHeaderView.xaml.cs">
+      <DependentUpon>SchedulerMonthWeekHeaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduler\View\ElementView\DayView\SchedulerDayHourHeaderView.xaml.cs">
+      <DependentUpon>SchedulerDayHourHeaderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduler\View\Scheduler.xaml.cs">
+      <DependentUpon>Scheduler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduler\View\SubView\SchedulerMonthView.xaml.cs">
+      <DependentUpon>SchedulerMonthView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scheduler\View\SubView\SchedulerWeekView.xaml.cs">
+      <DependentUpon>SchedulerWeekView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Scheduler\View\ElementView\DayView\SchedulerAllDayBodyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\ElementView\DayView\SchedulerDayHourHeaderBorderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\ElementView\DayView\SchedulerDayBodyBorderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\ElementView\MonthView\SchedulerMonthDayBodyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\ElementView\MonthView\SchedulerMonthDayHeaderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\ElementView\DayView\SchedulerDayBodyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\ElementView\DayView\SchedulerDayHeaderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\ElementView\MonthView\SchedulerMonthDayNameHeaderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\ElementView\MonthView\SchedulerMonthWeekHeaderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\ElementView\DayView\SchedulerDayHourHeaderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\Resources\SchedulerMainResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Scheduler\View\Scheduler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\Resources\SchedulerResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\Resources\SchedulerMonthResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Scheduler\View\SubView\SchedulerMonthView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Scheduler\View\Resources\SchedulerWeekResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Scheduler\View\SubView\SchedulerWeekView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
